@@ -15,18 +15,6 @@ import smtplib
 from dotenv import load_dotenv
 import os
 
-'''
-Make sure the required packages are installed: 
-Open the Terminal in PyCharm (bottom left). 
-
-On Windows type:
-python -m pip install -r requirements.txt
-
-On MacOS type:
-pip3 install -r requirements.txt
-
-This will install the packages from the requirements.txt for this project.
-'''
 
 load_dotenv(dotenv_path='.env')
 app = Flask(__name__)
@@ -272,16 +260,6 @@ def delete_post(post_id):
 @app.route("/about")
 def about():
     return render_template("about.html", current_user=current_user)
-
-
-# @app.route("/contact", methods=["GET", "POST"])
-# def contact():
-#     return render_template("contact.html", current_user=current_user)
-
-
-# Optional: You can include the email sending code from Day 60:
-# DON'T put your email and password here directly! The code will be visible when you upload to Github.
-# Use environment variables instead (Day 35)
 
 MAIL_ADDRESS = os.environ.get("EMAIL_KEY")
 MAIL_APP_PW = os.environ.get("PASSWORD_KEY")
